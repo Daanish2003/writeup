@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Dancing_Script, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["100","200","300","400", "500", "600", "700", "800", "900"] });
+const dancing_script = Dancing_Script({ subsets: ["latin"], weight: ["400","500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${dancing_script.className} flex flex-col h-screen relative`}>{children}</body>
     </html>
   );
 }
